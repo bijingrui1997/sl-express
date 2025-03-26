@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <settings
-        xmlns="http://maven.apache.org/SETTINGS/1.0.0"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
+    xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd">
 
-    <!-- ���زֿ� -->
-<!--    <localRepository>F:\maven\repository</localRepository>-->
+    <!-- 本地仓库 -->
+    <!--    <localRepository>F:\maven\repository</localRepository>-->
 
-    <!-- ����˽����deploy���˺� -->
+    <!-- 配置私服的deploy的账号 -->
     <servers>
         <server>
             <id>sl-releases</id>
@@ -21,7 +21,7 @@
         </server>
     </servers>
 
-    <!-- ʹ�ð�����maven�����ų�˽����Դ�� -->
+    <!-- 使用阿里云maven镜像排除私服源的 -->
     <mirrors>
         <mirror>
             <id>mirror</id>
@@ -34,7 +34,7 @@
     <profiles>
         <profile>
             <id>sl</id>
-            <!-- ������Ŀdeploy�ĵ�ַ -->
+            <!-- 配置项目deploy的地址 -->
             <properties>
                 <altReleaseDeploymentRepository>
                     sl-releases::default::http://maven.sl-express.com/nexus/content/repositories/releases/
@@ -43,7 +43,7 @@
                     sl-snapshots::default::http://maven.sl-express.com/nexus/content/repositories/snapshots/
                 </altSnapshotDeploymentRepository>
             </properties>
-            <!-- ������Ŀ����������˽����ַ -->
+            <!-- 配置项目依赖下载的私服地址 -->
             <repositories>
                 <repository>
                     <id>sl-releases</id>
@@ -70,7 +70,7 @@
     </profiles>
 
     <activeProfiles>
-         <!-- �������� -->
+        <!-- 激活配置 -->
         <activeProfile>sl</activeProfile>
     </activeProfiles>
 
